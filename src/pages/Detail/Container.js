@@ -1,28 +1,48 @@
 import React, { Component } from "react";
 import config from "../../config/env.js";
-import { getDealsByCompanyIdAndLocationId } from "../../api";
+import {
+  getDealsByCompanyIdAndLocationId,
+  getPricingsByCompanyIdAndLocationId
+} from "../../api";
 
 import DetailComponent from "./Component";
 
 class DetailContainer extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
+      locationId: props.match.params.locationId,
       loading: true,
-      deals: []
+      deals: [],
+      variationIds: [],
+      pricings: []
     };
   }
 
+  getDeals = () => {
+    getDealsByCompanyIdAndLocationId(
+      config.companyId,
+      this.state.locationId
+    ).then(deals => {
+      this.setState({
+        deals: deals,
+        loading: false
+      });
+    });
+  };
+
+  getPricings = () => {
+    getPricingsByCompanyIdAndLocationId(
+      config.companyId,
+      this.state.locationId
+    ).then(pricings => {
+      this.setState({ pricings });
+    });
+  };
+
   componentDidMount = () => {
-    const locationId = this.props.match.params.locationId;
-    getDealsByCompanyIdAndLocationId(config.companyId, locationId).then(
-      deals => {
-        this.setState({
-          deals: deals,
-          loading: false
-        });
-      }
-    );
+    this.getDeals();
+    this.getPricings();
   };
 
   render() {
