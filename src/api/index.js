@@ -20,3 +20,16 @@ export const getDealsByCompanyIdAndLocationId = (companyId, locationId) => {
     })
     .catch(err => console.log(err));
 };
+
+export const getPricingsByCompanyIdAndLocationId = (companyId, locationId) => {
+  return axios
+    .get(
+      `${
+        config.apiURL
+      }/companies/${companyId}/pricings?location_ids=${locationId}`
+    )
+    .then(res => {
+      return res.data.pricings;
+    })
+    .catch(err => console.log(err));
+};
