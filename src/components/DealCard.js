@@ -10,14 +10,14 @@ const DealCard = ({ deal }) => {
     return deal.variations.map((info, index) => {
       return (
         <GridItem key={info.id}>
-          <Typography style={{ fontWeight: "bold" }}>{info.name}</Typography>
+          <Typography>{info.name}</Typography>
         </GridItem>
       );
     });
   };
 
   return (
-    <Card style={{ maxWidth: 600 }}>
+    <Card>
       <CardContent>
         <Typography gutterBottom color="primary" variant="h5" component="h2">
           {deal.service.name}

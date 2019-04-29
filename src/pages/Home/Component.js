@@ -17,7 +17,11 @@ const HomeComponent = ({ locations, loading }) => {
     });
   };
 
-  return <GridContainer>{renderLocations()}</GridContainer>;
+  return (
+    <div className="container" style={{ marginTop: 50, marginBottom: 50 }}>
+      <GridContainer>{renderLocations()}</GridContainer>
+    </div>
+  );
 };
 
 export default HomeComponent;

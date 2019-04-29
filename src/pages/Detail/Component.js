@@ -20,13 +20,13 @@ const DetailComponent = ({ deals, loading }) => {
   };
 
   return (
-    <>
-      <Button href="/">
+    <div className="container" style={{ marginTop: 50, marginBottom: 50 }}>
+      <Button color="secondary" href="/">
         <HomeIcon />
-        Home
+        Return
       </Button>
       <GridContainer>{renderDeals()}</GridContainer>
-    </>
+    </div>
   );
 };
 

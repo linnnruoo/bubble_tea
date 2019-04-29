@@ -6,7 +6,7 @@ const GridContainer = ({ children, ...rest }) => {
     <Grid
       container
       spacing={16}
-      alignItems="flex-end"
+      alignItems="center"
       direction="row"
       justify="center"
       {...rest}

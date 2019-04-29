@@ -18,7 +18,7 @@ const LocationCard = props => {
   ].join(", ");
 
   return (
-    <Card style={{ maxWidth: 600 }}>
+    <Card>
       <CardContent>
         <Typography variant="h5" component="h2">
           {location.street_address}
