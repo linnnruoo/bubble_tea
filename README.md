@@ -2,7 +2,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Environmental variable
 
-Please refer to `.env.example` for the structure of `.env` file
+Please refer to `env.example.js` for the structure of `env.js` file under the config folder.
+Also, the apiURL is the base api url provided by the MyTime API documentation. Please refer to `src/api/` folder for more details.
 
 ## Available Scripts
 
