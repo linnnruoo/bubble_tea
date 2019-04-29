@@ -11,12 +11,12 @@ export const getLocationsByCompanyId = companyId => {
 };
 
 export const getDealsByCompanyIdAndLocationId = (companyId, locationId) => {
-  axios
+  return axios
     .get(
       `${config.apiURL}/companies/${companyId}/deals?location_ids=${locationId}`
     )
     .then(res => {
-      console.log(res);
+      return res.data.deals;
     })
     .catch(err => console.log(err));
 };
